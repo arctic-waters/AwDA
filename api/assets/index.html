@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>AwDA</title>
+  <meta name="description" content="AwDA">
+  <meta name="author" content="Me">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="bundle.js"></script>
+  <script src="code.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="topBar" class = "top_bar">
+    <p class="topText">Arctic Waters Device Analyzer</p>
+    <p class="totScore" id="totScore">Total Score: 0</p>
+    <button type="button" class="btn btn-primary login" onclick="showConf()">Upload Config File</button>
+    <button type="button" class="btn btn-outline-danger logout" onclick="user.signout().then(window.location.reload(false))">Log Out</button>
+
+  </div>
+
+  <div id="seperator1" class="seperator"></div>
+
+  <div id="devices" class="box">
+    <div id="devTit" class="title">
+      <p class="titleText">Devices</p>
+    </div>
+
+    <div id = "devCardAdd" class="cardd add" onclick="showDev()">
+      <img src="plus.svg" class="icon addIc">
+      <div class="cardTextBox">
+        <p class="cardName">Add Device</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="seperator2" class="seperator"></div>
+
+  <div id="passwords" class="box">
+    <div id="passTit" class="title">
+      <p class="titleText">Accounts</p>
+    </div>
+
+
+
+    <div id = "accCardAdd" class="cardd add" onclick="showAcc()">
+      <img src="plus.svg" class="icon addIc">
+      <div class="cardTextBox">
+        <p class="cardName">Add Account</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="seperator3" class="seperator"></div>
+
+  <div id="services" class="box">
+    <div id="servTit" class="title">
+      <p class="titleText">Services</p>
+    </div>
+
+
+    <div id = "serCardAdd" class="cardd add" onclick="showSer()">
+      <img src="plus.svg" class="icon addIc">
+      <div class="cardTextBox">
+        <p class="cardName">Add Service</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="devAdd" class="coverDiv" hidden="true" onclick="hideDev()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Add Device</p>
+      <div class="form-outline searchBarr">
+        <input type="search" id="devForm" class="form-control" placeholder="Search"
+        aria-label="Search" />
+      </div>
+
+      <div id="devResBox" class="searchResBox">
+        <div name="searchRes" class="searchRes" onclick="select(this)">
+          <p class="searchResText">
+            Tmptmptmp
+          </p>
+        </div>
+        <div class = "searchSpacer"></div>
+      </div>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="addDev()">Add</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideDev()">Cancel</button>
+    </div>
+  </div>
+
+  <div id="serAdd" class="coverDiv" hidden="true" onclick="hideSer()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Add Service</p>
+      <div class="form-outline searchBarr">
+        <input type="search" id="serForm" class="form-control" placeholder="Search"
+        aria-label="Search" />
+      </div>
+
+      <div id="serResBox" class="searchResBox">
+        <div name="searchRes" class="searchRes" onclick="select(this)">
+          <p class="searchResText">
+            Tmptmptmp
+          </p>
+        </div>
+        <div class = "searchSpacer"></div>
+      </div>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="addSer()">Add</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideSer()">Cancel</button>
+    </div>
+  </div>
+
+  <div id="accAdd" class="coverDiv" hidden="false" onclick="hideSer()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Add Account</p>
+
+      <div class="accDrop">
+        <select class="form-control accText" id="accDrop">
+          <option>Email</option>
+          <option>Password</option>
+        </select>
+      </div>
+
+      <div class="form-outline accName">
+        <input type="search" id="accName" class="form-control accText" placeholder="Name"
+        aria-label="Search" />
+      </div>
+
+      <div class="form-outline accValue">
+        <input type="search" id="accValue" class="form-control accText" placeholder="Email Address / Password"
+        aria-label="Search" />
+      </div>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="addAcc()">Add</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideAcc()">Cancel</button>
+    </div>
+  </div>
+
+  <div id="devEdit" class="coverDiv" hidden="true" onclick="hideDevEdit()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Vulnerabilities</p>
+      <p class="vulnText"id = "vulnDev">stuffff</p>
+
+      <div class = "searchSpacer"></div>
+
+      <p class="addText">Edit Device</p>
+      <div class="form-outline searchBarr">
+        <input type="search" id="devEditForm" class="form-control" placeholder="Search"
+        aria-label="Search" />
+      </div>
+
+      <div id="devEditResBox" class="searchResBox editResBox">
+        <div name="searchRes" class="searchRes" onclick="select(this)">
+          <p class="searchResText">
+            Tmptmptmp
+          </p>
+        </div>
+        <div class = "searchSpacer"></div>
+      </div>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="devSave()">Save</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideDevEdit()">Cancel</button>
+      <button type="button" class="btn btn-outline-danger delBtn" onclick="devDelete()">Delete</button>
+    </div>
+  </div>
+
+  <div id="serEdit" class="coverDiv" hidden="true" onclick="hideSerEdit()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Vulnerabilities</p>
+      <p class="vulnText" id = "vulnSer">stuffff</p>
+
+      <div class = "searchSpacer"></div>
+
+      <p class="addText">Edit Service</p>
+      <div class="form-outline searchBarr">
+        <input type="search" id="serEditForm" class="form-control" placeholder="Search"
+        aria-label="Search" />
+      </div>
+
+      <div id="serEditResBox" class="searchResBox editResBox">
+        <div name="searchRes" class="searchRes" onclick="select(this)">
+          <p class="searchResText">
+            Tmptmptmp
+          </p>
+        </div>
+        <div class = "searchSpacer"></div>
+      </div>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="serSave()">Save</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideSerEdit()">Cancel</button>
+      <button type="button" class="btn btn-outline-danger delBtn" onclick="serDelete()">Delete</button>
+    </div>
+  </div>
+
+  <div id="accEdit" class="coverDiv" hidden="true" onclick="hideAccEdit()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Vulnerabilities</p>
+      <p class="vulnText"id = "vulnAcc">stuffff</p>
+
+      <div class = "searchSpacer"></div>
+
+      <p class="addText">Edit Account</p>
+
+      <div class="accDrop">
+        <select class="form-control accText" id="accEditDrop">
+          <option>Email</option>
+          <option>Password</option>
+        </select>
+      </div>
+
+      <div class="form-outline accName">
+        <input type="search" id="accEditName" class="form-control accText" placeholder="Name"
+        aria-label="Search" />
+      </div>
+
+      <div class="form-outline accValue">
+        <input type="search" id="accEditValue" class="form-control accText" placeholder="Email Address / Password"
+        aria-label="Search" />
+      </div>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="accSave()">Save</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideAccEdit()">Cancel</button>
+      <button type="button" class="btn btn-outline-danger delBtn" onclick="accDelete()">Delete</button>
+    </div>
+  </div>
+
+  <div id="confAdd" class="coverDiv" hidden="false" onclick="hideConf()">
+    <div class = "addPop" onclick="event.stopPropagation()">
+      <p class="addText">Add Configuration</p>
+
+      <input id='fileid' type='file' hidden/>
+      <button type="button" class="btn btn-primary confBtn" id="fileBtn">Select File</button>
+
+      <button type="button" class="btn btn-primary addBtn" onclick="addConf()">Add</button>
+      <button type="button" class="btn btn-outline-dark canBtn" onclick="hideConf()">Cancel</button>
+    </div>
+  </div>
+</body>
+</html>

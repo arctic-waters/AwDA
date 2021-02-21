@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+
+    "lib": [
+      "ES5",
+      "ES6",
+      "ESNext",
+      "DOM"
+    ],
+
+    "strict": true,
+    "alwaysStrict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "module": "es6",
+    "moduleResolution": "node",
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    "baseUrl": ".",
+    "outDir": "dist/",
+
+    "declaration": true,
+
+    "charset": "utf8",
+    "newLine": "lf",
+
+    "removeComments": true,
+    "stripInternal": true,
+
+    "noEmit": false,
+    "noEmitOnError": true,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "pretty": true,
+  },
+
+ "include": ["src/*"]
+}
