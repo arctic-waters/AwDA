@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad3c9fb5-69d8-4974-ad7c-14be3c7147a3" name="Default Changelist" comment="" />
+    <list default="true" id="ad3c9fb5-69d8-4974-ad7c-14be3c7147a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../api/assets/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/../api/assets/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/assets/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../api/assets/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/assets/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../api/assets/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/assets/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../api/assets/login.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +18,9 @@
         <option value="TypeScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1omDpNNiNS3JSCYsCDJy2xrhppN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -49,6 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613883053526</updated>
       <workItem from="1613883054773" duration="20843000" />
+      <workItem from="1613957484684" duration="62000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-const sdk = new AwDA.SDK("https://awda.arct.io/api");
+const sdk = new AwDA.SDK("https://awse.arct.io/api");
 
 let serArr;
 let devArr;
